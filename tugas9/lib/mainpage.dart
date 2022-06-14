@@ -106,10 +106,11 @@ class MainPage extends StatelessWidget {
             SizedBox(
                 width: 250,
                 height: 50,
-                child: RaisedButton(
+                child: ElevatedButton(
                     child: Text('LOGIN'),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25)))),
                     onPressed: () {}))
           ],
         ),
