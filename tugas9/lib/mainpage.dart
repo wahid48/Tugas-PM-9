@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'register.dart';
 
 void main() {
   runApp(MainPage());
@@ -111,7 +112,27 @@ class MainPage extends StatelessWidget {
                     style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25)))),
-                    onPressed: () {}))
+                    onPressed: () {})),
+            Padding(padding: EdgeInsets.only(top: 25)),
+
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(child: Text("don't have an account?")),
+                  Padding(padding: EdgeInsets.only(left: 5)),
+                  InkWell(
+                      child: Text('Sign Up',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      onTap: () => {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return register();
+                            }))
+                          })
+                ],
+              ),
+            ),
           ],
         ),
       )),
